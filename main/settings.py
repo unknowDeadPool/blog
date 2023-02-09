@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # my apps
     'applications.account',
     'applications.post',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -140,3 +141,9 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication'
+    ],
+}
